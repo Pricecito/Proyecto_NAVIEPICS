@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Naviepics</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css}" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" th:href="@{css/bootstrap.css}" />
+
+  <!-- fonts style -->
+  <link th:href="@{https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&display=swap}" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link th:href="@{/css/style.css}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link th:ref="@{/css/responsive.css}" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" th:href="@{/}">
+            <img th:src="@{/images/logo.jpg}" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" th:href="@{/}">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" th:href="@{/inicioSesion}">Iniciar Sesion </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" th:href="@{/vehiculo}"> Vehiculo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" th:href="@{/estacionamientos}"> <em>Estacionamiento</em></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" th:text="${usu.nombre}+ ' ¡Bienvenido'"></a>
+                </li>
+              </ul>             
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-4 offset-md-2">
+                  <div class="slider_detail-box">
+                    <h1>
+                      Empezar a explorar 
+                      <span>
+                      NaviEpics
+                      </span>
+                    </h1>
+                    <p >
+                      Fácil sistema de reserva de parking. Resuelve el caos del estacionamiento con solo unos pocos clics.
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn-1">
+                        Reserva
+                      </a>
+                      <a href="" class="btn-2">
+                        Contacta
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="slider_img-box">
+                    <img th:src="@{/images/carro.png}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-4 offset-md-2">
+                  <div class="slider_detail-box">
+                    <h1>
+                      No olvides de hacer tu
+                      <span>
+                      Reserva
+                      </span>
+                    </h1>
+                    <p>
+                      Ahora tambien puedes reservar desde la comodidad de tu casa, dale click al boton de RESERVA
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn-1">
+                        Reserva
+                      </a>
+                      <a href="" class="btn-2">
+                        Contacta
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="slider_img-box">
+                    <img th:src="@{images/reservado.png}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+                <div class="col-md-6">
+                  <div class="slider_img-box">
+                    <img th:src="@{/images/slider-img.png}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img-box">
+            <img th:src="@{/images/persona.png}" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <h2 class="custom_heading">
+              Acerca de
+              <span>
+                NaviEpics
+              </span>
+            </h2>
+            <p>
+              Nuestro sistema intuitivo y fácil de usar te permite localizar y 
+              reservar espacios de estacionamiento disponibles en tiempo real. 
+              Ya sea que necesites estacionar en una concurrida área urbana, 
+              cerca de tu oficina, o en un evento especial, nuestro servicio te garantiza 
+              un lugar asegurado sin complicaciones.
+            </p>
+            <div>
+              <a href="">
+                Leer Más
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- service section -->
+  <section class="service_section layout_padding">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 offset-md-2">
+          <h2 class="custom_heading">
+            Sientete Seguro con <span>NaviEpics</span>
+          </h2>
+          <div class="container layout_padding2">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="img_box">
+                  <img th:src="@{/images/s-1.png}" alt="">
+                </div>
+                <div class="detail_box">
+                  <h6>
+                    Estacionamiento Confiable
+                  </h6>
+                  <p>
+                    Con NaviEpics puedes elegir estacionamientos disponibles desde un click, ¡te facilitamos la vida!.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="img_box">
+                  <img th:src="@{/images/s-2.png}" alt="">
+                </div>
+                <div class="detail_box">
+                  <h6>
+                    Pago Seguro
+                  </h6>
+                  <p>
+                    Puedes realizar tu reservacion de forma segura mediante nuestra pagina web.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="img_box">
+                  <img th:src="@{/images/s-3.png}" alt="">
+                </div>
+                <div class="detail_box">
+                  <h6>
+                    Tiempo Real
+                  </h6>
+                  <p>
+                    Si en caso de que esten ocupados nuestros estacionamientos, 
+                    Ahora puedes buscarlos mediante nuestro mapa en tiempo real.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <a href="">
+              Leer Más
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img th:src="@{/images/carro1.png}" alt="" class="w-100">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
+
+
+  <!-- gallery section -->
+  <section class="gallery-section layout_padding">
+    <div class="container">
+      <h2>
+        Algunas Fotos de Nuestros Estacionamientos
+      </h2>
+    </div>
+    <div class="container ">
+      <div class="img_box box-1">
+        <img th:src="@{/images/g-1.png}" alt="">
+      </div>
+      <div class="img_box box-2">
+        <img th:src="@{/images/g-2.png}" alt="">
+      </div>
+      <div class="img_box box-3">
+        <img th:src="@{/images/g-3.png}" alt="">
+      </div>
+      <div class="img_box box-4">
+        <img th:src="@{/images/g-4.png}" alt="">
+      </div>
+      <div class="img_box box-5">
+        <img th:src="@{/images/g-5.png}" alt="">
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- end gallery section -->
+
+
+  <!-- client section -->
+  <section class="client_section layout_padding-bottom">
+    <div class="container">
+      <div class="text-center">
+        <img th:src="@{/images/usmp.png}" alt="Descripción de la imagen" style="max-width: 100%; height: auto;">
+      </div>
+      <h2 class="custom_heading text-center">
+        Que Dicen Nuestros 
+        <span>
+          Clientes
+        </span>
+      </h2>
+      <p class="text-center">
+       Docente y Estudiantes de la USMP de la carrera de Ingenieria de Computacion y Sistemas del curso de Teoria y Diseño de Base de Datos Filial Sur
+          
+      </p>
+      <div id="carouselExample2Indicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExample2Indicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExample2Indicators" data-slide-to="1"></li>
+          <li data-target="#carouselExample2Indicators" data-slide-to="2"></li>
+          <li data-target="#carouselExample2Indicators" data-slide-to="3"></li>
+          <li data-target="#carouselExample2Indicators" data-slide-to="4"></li>
+          <li data-target="#carouselExample2Indicators" data-slide-to="5"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="layout_padding2 pl-100">
+              <div class="client_container ">
+                <div class="img_box">
+                  <img th:src="@{/images/docente.jpg}" alt="" width="150" height="150">
+                </div>
+                <div class="detail_box">
+                  <h5>
+                    Docente: Ruben Garcia Farje
+                  </h5>
+                  <p>
+                    Experiencia en proyectos de migración de datos de Oracle a DB2 
+                    y de sistemas legacy a SAP IS-HER. Más de 18 años de liderazgo de equipos 
+                    y dedicado a la docencia de educación superior dentro de asignaturas de base 
+                    de datos y programación. 12 años como DBA Oracle en organización educativa e 
+                    involucramiento en sus procesos de negocio. 3 años de experiencia en entidad 
+                    del Estado en el rubro de préstamos para programas de vivienda.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="layout_padding2 pl-100">
+              <div class="client_container ">
+                <div class="img_box">
+                  <img src="images/client.jpg" alt="">
+                </div>
+                <div class="detail_box">
+                  <h5>
+                    Estudiante: Juan Matias Gutierrez Casani
+                  </h5>
+                  <p>
+                    Soy estudiante de la Universidad San Martin de Porres Filial Sur, 
+                    cursando la carrera de Ingeniería de Computación y Sistemas. Actualmente,
+                     estoy en el 5to ciclo del año académico 2024-I, 
+                     y estoy tomando el curso de Teoría y Diseño de Base de Datos. 
+                     Durante mi tiempo en la universidad, he desarrollado una sólida 
+                     comprensión de los fundamentos de la computación y los sistemas, 
+                     y he adquirido habilidades prácticas en diversos lenguajes de programación
+                      y tecnologías de bases de datos.
+                   </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="layout_padding2 pl-100">
+              <div class="client_container ">
+                <div class="img_box">
+                  <img src="images/client.jpg" alt="">
+                </div>
+                <div class="detail_box">
+                  <h5>
+                    Estudiante: Andrea Nikole Alva Chavez
+                  </h5>
+                  <p>
+                    Soy estudiante de la Universidad San Martin de Porres Filial Sur, 
+                    cursando la carrera de Ingeniería de Computación y Sistemas. Actualmente,
+                     estoy en el 5to ciclo del año académico 2024-I, 
+                     y estoy tomando el curso de Teoría y Diseño de Base de Datos. 
+                     Durante mi tiempo en la universidad, he desarrollado una sólida 
+                     comprensión de los fundamentos de la computación y los sistemas, 
+                     y he adquirido habilidades prácticas en diversos lenguajes de programación
+                      y tecnologías de bases de datos.
+                    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="layout_padding2 pl-100">
+              <div class="client_container ">
+                <div class="img_box">
+                  <img src="images/client.jpg" alt="">
+                </div>
+                <div class="detail_box">
+                  <h5>
+                    Estudiante: Oscar Rene Pineda Flores
+                  </h5>
+                  <p>
+                    Soy estudiante de la Universidad San Martin de Porres Filial Sur, 
+                    cursando la carrera de Ingeniería de Computación y Sistemas. Actualmente,
+                     estoy en el 5to ciclo del año académico 2024-I, 
+                     y estoy tomando el curso de Teoría y Diseño de Base de Datos. 
+                     Durante mi tiempo en la universidad, he desarrollado una sólida 
+                     comprensión de los fundamentos de la computación y los sistemas, 
+                     y he adquirido habilidades prácticas en diversos lenguajes de programación
+                      y tecnologías de bases de datos.
+                    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="layout_padding2 pl-100">
+              <div class="client_container ">
+                <div class="img_box">
+                  <img src="images/client.jpg" alt="">
+                </div>
+                <div class="detail_box">
+                  <h5>
+                    Estudiante: Geraldine Loana Yanque Flores
+                  </h5>
+                  <p>
+                    Soy estudiante de la Universidad San Martin de Porres Filial Sur, 
+                    cursando la carrera de Ingeniería de Computación y Sistemas. Actualmente,
+                     estoy en el 5to ciclo del año académico 2024-I, 
+                     y estoy tomando el curso de Teoría y Diseño de Base de Datos. 
+                     Durante mi tiempo en la universidad, he desarrollado una sólida 
+                     comprensión de los fundamentos de la computación y los sistemas, 
+                     y he adquirido habilidades prácticas en diversos lenguajes de programación
+                      y tecnologías de bases de datos.
+                    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="layout_padding2 pl-100">
+              <div class="client_container ">
+                <div class="img_box">
+                  <img src="images/client.jpg" alt="">
+                </div>
+                <div class="detail_box">
+                  <h5>
+                    Estudiante: Rodrigo Andres Barrios Caceres
+                  </h5>
+                  <p>
+                    Soy estudiante de la Universidad San Martin de Porres Filial Sur, 
+                    cursando la carrera de Ingeniería de Computación y Sistemas. Actualmente,
+                     estoy en el 5to ciclo del año académico 2024-I, 
+                     y estoy tomando el curso de Teoría y Diseño de Base de Datos. 
+                     Durante mi tiempo en la universidad, he desarrollado una sólida 
+                     comprensión de los fundamentos de la computación y los sistemas, 
+                     y he adquirido habilidades prácticas en diversos lenguajes de programación
+                      y tecnologías de bases de datos.
+                    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+  <!-- end client section -->
+
+  <!-- map section -->
+
+  <section class="map_section">
+    <div id="map" class="h-100 w-100 ">
+    </div>
+
+    <div class="form_container ">
+      <div class="row">
+        <div class="col-md-8 col-sm-10 offset-md-4">
+          <form action="">
+            <div class="text-center">
+              <h3>
+                Te Contactámos
+              </h3>
+            </div>
+            <div>
+              <input type="text" placeholder="Nombre" class="pt-3">
+            </div>
+            <div>
+              <input type=" text" placeholder="Numero Celular">
+            </div>
+            <div>
+              <input type="email" placeholder="Email">
+            </div>
+            <div>
+              <input type="text" class="message-box" placeholder="Mensaje">
+            </div>
+            <div class="d-flex justify-content-center">
+              <button>
+                ENVIAR
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <!-- end map section -->
+
+  <!-- info section -->
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="info_items">
+        <a href="">
+          <div class="item ">
+            <div class="img-box box-1">
+              <img src="" alt="">
+            </div>
+            <div class="detail-box">
+              <p>
+                Ubicacion
+              </p>
+            </div>
+          </div>
+        </a>
+        <a href="">
+          <div class="item ">
+            <div class="img-box box-2">
+              <img src="" alt="">
+            </div>
+            <div class="detail-box">
+              <p>
+                +02 1234567890
+              </p>
+            </div>
+          </div>
+        </a>
+        <a href="">
+          <div class="item ">
+            <div class="img-box box-3">
+              <img src="" alt="">
+            </div>
+            <div class="detail-box">
+              <p>
+                naviepics@gmail.com
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+      &copy; 2024 All Rights Reserved By
+      <a href="images/naviepics.jpeg">NAVIEPICS</a>
+    </p>
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+
+  <script>
+    // This example adds a marker to indicate the position of Arequipa, Peru.
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 11,
+        center: {
+          lat: -16.409047,
+          lng: -71.537451
+        },
+      });
+  
+      var image = 'images/maps-and-flags.png';
+      var beachMarker = new google.maps.Marker({
+        position: {
+          lat: -16.409047,
+          lng: -71.537451
+        },
+        map: map,
+        icon: image
+      });
+    }
+  </script>
+  <!-- google map js -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap">
+  </script>
+  <!-- end google map js --> 
+  
+</body>
+</body>
+
+</html>
